@@ -1,5 +1,7 @@
 Welcome to Craig Stansbury's Security lab audition. For this lab, you will need a clean install of Ubuntu 20.04, as well as a secondary device that is on the same network of Ubuntu 20.04. The secondary device needs to have the ability to SSH, as well as open a web browser.
 
+If you are viewing this README.md file via GitHub GUI, make sure to view it by "Display the Source Blob" rather than the default "Display the rendered blob". Or, you can download the README.md file in your editor of choice. If you view this file via the "Display the rendered blob" some key formatting is lost.
+
 Please note that throughout this lab experience, you may see a configuration contained in brackets, such as <yourServersIP>. I'll ask you to replace that with the actual information that I want to use. Please make sure to replace the brackets and information inside the brackets with your actual configuration
 
 For example, you would replace <yourServersIP> with the actual IP address of your server. So if you are asked to enter a command such as "sudo nano /etc/apache2/sites-available/<yourServersIP>.conf" and the IP address of your server is 172.20.1.211, you would enter:
