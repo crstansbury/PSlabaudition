@@ -85,15 +85,15 @@ Press `ctrl + x` and type `Y` when prompted, and hit `enter` to save over the fi
 Step 4.3.3 Now we are going to test that the previous command worked. The output should say "Syntax OK"  
 `sudo apache2ctl configtest`
 
-Step 4.3.4 Now we need to reload the apache2 service for the previous changes to take effect
-sudo systemctl reload apache2
+Step 4.3.4 Now we need to reload the apache2 service for the previous changes to take effect:  
+`sudo systemctl reload apache2`
 
-Step 4.3.5 Since we have already enabled the firewall, we need to tell the server to allow all of Apache
-sudo ufw allow "Apache Full"
+Step 4.3.5 Since we have already enabled the firewall, we need to tell the server to allow all of Apache:  
+`sudo ufw allow "Apache Full"`
 
 Step 4.3.6 Now we will test and make sure that we can navigate to this site over https. You may receive an error that the traffic is not protected, asking if you want to proceed. This is to be expected becuase the certificate that we are using was self-generated, and not natively trusted by your browser. Please click "advanced" and then "accept the risk and continue" (The exact syntax of this may differ depending on your browser)
 To do that, open up a browser on your other machine and navigate to the following:
-https://<yourServersIP>
+`https://<yourServersIP>`
 
 Step 5 The last step that we need to do is to have the server redirect all unsecure http traffic to secure https traffic. We will do this by modifying the apache config file
 
