@@ -72,14 +72,15 @@ Step 4.3 Now we need to enable the .conf file that we just created.
 Step 4.3.1 Enter the below command and be sure to change \<yourServersIP> to the IP address of your server:  
 `sudo a2ensite <yourServersIP>.conf`
 
-Step 4.3.2 Now we will have the server to recognize your servers IP address as it's name. To do that, run the below command, and then enter `ServerName <yourServersIP>` on a new line in the file. This can be anywhere, I put it about half way down, after `#ServerRoot '/etc/apache2' `  
+Step 4.3.2 Now we will have the server to recognize your servers IP address as it's name. To do that, you will open the Apache config file, and then enter `ServerName <yourServersIP>` on a new line in the file. This can be anywhere, I put it about half way down, after `#ServerRoot '/etc/apache2' `  
 
+Step 4.3.2.1 Open the Apache config file:  
 `sudo nano /etc/apache2/apache2.conf`
 
-Step 4.3.2.1 copy `ServerName <yourServersIP>` on a new line in the file:  
+Step 4.3.2.2 copy `ServerName <yourServersIP>` on a new line in the file:  
 example: `ServerName 172.20.1.211`
 
-Step 4.3.2.2 save the file:  
+Step 4.3.2.3 save the file:  
 Press `ctrl + x` and type `Y` when prompted, and hit `enter` to save over the file  
 
 Step 4.3.3 Now we are going to test that the previous command worked. The output should say "Syntax OK"  
@@ -95,16 +96,17 @@ Step 4.3.6 Now we will test and make sure that we can navigate to this site over
 To do that, open up a browser on your other machine and navigate to the following:
 `https://<yourServersIP>`
 
-Step 5 The last step that we need to do is to have the server redirect all unsecure http traffic to secure https traffic. We will do this by modifying the apache config file
+Step 5 The last step that we need to do is to have the server redirect all unsecure http traffic to secure https traffic. This way, there won't be any unencrypted traffic communicating with yorus erver. We will do this by modifying the apache config file.
 
-Step 5.1 Open the .conf file
-sudo nano /etc/apache2/apache2.conf
+Step 5.1 Open the .conf file  
+`sudo nano /etc/apache2/apache2.conf`
 
 Step 5.2 We will create a virtual host over port 80, and tell it to redirect to https. Copy the following into your .conf file, after "ServerName <yourServersIP>" that you configured in step 4.3.2.1
-<Virtualhost *:80>
-	ServerName <yourServersIP>
-	RedirectMatch permanent ^(.*)$ https://<yourServersIP>$1
-</Virtualhost>
+
+	<Virtualhost *:80>
+	  ServerName <yourServersIP>
+	  RedirectMatch permanent ^(.*)$ https://<yourServersIP>$1
+	</Virtualhost>
 
 Step 5.2.1 Save your work
 Press "ctrl + x" and type "Y" when prompted, and hit enter to save over the file
