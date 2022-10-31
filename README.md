@@ -15,7 +15,7 @@ Step 1: Clone this repo to your Ubuntu server by entering the following command:
 
 Step 2: Run the install script.
 
-Step 2.1: Enable your user account access to the labInstal.sh script:  
+Step 2.1: Enable your user account access to the labInstal.sh script. You will be promted to enter your password:  
 `sudo chmod +x PSlabaudition/labInstall.sh`
 
 Step 2.2: Run the install script:   
