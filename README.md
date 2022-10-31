@@ -40,13 +40,13 @@ Step 4.1.1 Generate a self signed certificate:
 `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt`
 
 Step 4.1.2 : Fill out the information. It may look something like this:  
-`Country Name (2 letter code) [XX]:\<InsertACountry:US>  
+Country Name (2 letter code) [XX]:\<InsertACountry:US>  
 State or Province Name (full name) []:<InsertAState:Nebraska>  
 Locality Name (eg, city) [Default City]:<InsertACity:Omaha>  
 Organization Name (eg, company) [Default Company Ltd]:<InsertFictiousCompany:Globomantics>  
 Organizational Unit Name (eg, section) []:<InsertDepartment:IT>  
 Common Name (eg, your name or your server's hostname) []:<insertComputersIP:172.20.1.211>  
-Email Address []:<insertAnEmail:craig@globomantics.com>`  
+Email Address []:<insertAnEmail:craig@globomantics.com>  
 
 step 4.2 Now that our certificate is created, we need to create a .conf file to tell the server to use this certificate
 
