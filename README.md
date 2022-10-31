@@ -108,17 +108,17 @@ Step 5.2 We will create a virtual host over port 80, and tell it to redirect to 
 	  RedirectMatch permanent ^(.*)$ https://<yourServersIP>$1
 	</Virtualhost>
 
-Step 5.2.1 Save your work
-Press "ctrl + x" and type "Y" when prompted, and hit enter to save over the file
+Step 5.2.1 Save your work  
+Press `ctrl + x` and type `Y` when prompted, and hit `enter` to save over the file
 
-Step 5.3 Now we are going to test that the previous command worked. The output should say "Syntax OK"
-sudo apachectl configtest
+Step 5.3 Now we are going to test that the previous command worked. The output should say "Syntax OK":  
+`sudo apachectl configtest`
 
-Step 5.4 Lastly, we will restart apache one more time to make sure all of our changes are active
-sudo systemctl reload apache2
+Step 5.4 Lastly, we will restart apache one more time to make sure all of our changes are active:  
+`sudo systemctl reload apache2`
 
-Step 5.5 From your other computer, navigate to your server over port 80, and see if you've been redirected to https
-http://<yourServersIP>
+Step 5.5 From your other computer, navigate to your server over port 80, and see if you've been redirected to https:  
+`http://<yourServersIP>`
 
 Congratulations! You've just completed Craig's Security Lab Demo! If you would like to dive further, please approve Craig Stansbury to do Security labs so he can take some work off your plate!
 
