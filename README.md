@@ -4,7 +4,7 @@ If you are viewing this README.md file via GitHub GUI, make sure to view it by "
 
 Please note that throughout this lab experience, you may see a configuration contained in brackets, such as \<yourServersIP>. I'll ask you to replace that with the actual information that I want to use. Please make sure to replace the brackets and information inside the brackets with your actual configuration
 
-For example, you would replace <yourServersIP> with the actual IP address of your server. So if you are asked to enter a command such as "sudo nano /etc/apache2/sites-available/<yourServersIP>.conf" and the IP address of your server is 172.20.1.211, you would enter:
+For example, you would replace \<yourServersIP> with the actual IP address of your server. So if you are asked to enter a command such as "sudo nano /etc/apache2/sites-available/\<yourServersIP>.conf" and the IP address of your server is 172.20.1.211, you would enter:
 sudo nano /etc/apache2/sites-available/172.20.1.211.conf
 
 Please also notice that I have removed the brackets "<>" and replaced it with the IP address of my server. In this lab, you should never be entering brackets into your commands. The brackets are your visual cue that you will need to change that part of the configuration.
