@@ -49,12 +49,12 @@ Step 4.1.2 : Fill out the information. It may look something like this:
 	Common Name (eg, your name or your server's hostname) []:<insertComputersIP:172.20.1.211>  
 	Email Address []:<insertAnEmail:craig@globomantics.com>  
 
-step 4.2 Now that our certificate is created, we need to create a .conf file to tell the server to use this certificate
+step 4.2 Now that our certificate is created, we need to create a .conf file to tell the server to use this certificate.
 
-step 4.2.1 Create a conf file to reference the new self signed cert you just created. Replace \<yourServersIP> with the IP address of your server.  
+step 4.2.1 Create a conf file to reference the new self signed cert you just created. Replace \<yourServersIP> with the IP address of your server:  
 `sudo nano /etc/apache2/sites-available/<yourServersIP>.conf`
 
-step 4.2.2 Copy the below contents into your new .conf file. Be sure to change the server name <yourServersIP> to the IP address of your server.  
+step 4.2.2 Copy the below contents into your new .conf file. Be sure to change the server name \<yourServersIP> to the IP address of your server:  
 
 	<VirtualHost *:443>  
 	   ServerName <yourServersIP>  
@@ -65,7 +65,7 @@ step 4.2.2 Copy the below contents into your new .conf file. Be sure to change t
 	</VirtualHost>  
 
 Step 4.2.3 Save the file
-Press "ctrl + x" and type "Y" when prompted, and hit enter to save over the file
+Press `ctrl + x` and type `Y` when prompted, and hit `enter` to save over the file
 
 Step 4.3 Now we need to enable the .conf file that we just created. 
 
