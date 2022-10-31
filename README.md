@@ -124,8 +124,13 @@ Step 5.3 Now we are going to test that the previous command worked. The output s
 Step 5.4 Lastly, we will restart apache one more time to make sure all of our changes are active:  
 `sudo systemctl reload apache2`
 
-Step 5.5 From your other computer, navigate to your server over port 80, and see if you've been redirected to https:  
+Step 5.5 Now we will test and make sure that when you are browsing to your server over http the connection is redirected to https:  
+		
+Step 5.5.1 From your other computer, navigate to your server over port 80  
 `http://<yourServersIP>`
+		
+Step 5.5.2 From your other computer, make sure that there is a lock icon (browser specific) and that the URL redirected to https://\<yourServersIP>
+		
 
 Congratulations! You've just completed Craig's Security Lab Demo! If you would like to dive further, please approve Craig Stansbury to do Security labs so he can take some work off your plate!
 
