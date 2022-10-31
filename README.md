@@ -1,26 +1,24 @@
 Welcome to Craig Stansbury's Security lab audition. For this lab, you will need a clean install of Ubuntu 20.04, as well as a secondary device that is on the same network of Ubuntu 20.04. The secondary device needs to have the ability to SSH, as well as open a web browser.
 
-If you are viewing this README.md file via GitHub GUI, make sure to view it by "Display the Source Blob" rather than the default "Display the rendered blob". Or, you can download the README.md file in your editor of choice. If you view this file via the "Display the rendered blob" some key formatting is lost.
-
 Please note that throughout this lab experience, you may see a configuration contained in brackets, such as \<yourServersIP>. I'll ask you to replace that with the actual information that I want to use. Please make sure to replace the brackets and information inside the brackets with your actual configuration
 
 For example, you would replace \<yourServersIP> with the actual IP address of your server. So if you are asked to enter a command such as "sudo nano /etc/apache2/sites-available/\<yourServersIP>.conf" and the IP address of your server is 172.20.1.211, you would enter:
 sudo nano /etc/apache2/sites-available/172.20.1.211.conf
 
-Please also notice that I have removed the brackets "<>" and replaced it with the IP address of my server. In this lab, you should never be entering brackets into your commands. The brackets are your visual cue that you will need to change that part of the configuration.
+Please also notice that I have removed the brackets "<>" and replaced it with the IP address of my server. 
 
 The goal of this lab is to secure Globomantics' web server and make sure that all traffic is encrypted. This will prevent hackers to sniff the traffic and obtain sensitive data! You will do this by enabling the firewall, creating a certificate to encrypt the web traffic, and finally, forcing all web traffic to use https, as opposed to http. But first, you need the source files:
 
-Step 1: Clone this repo to your Ubuntu server by entering the following command
+Step 1: Clone this repo to your Ubuntu server by entering the following command:
 
-git clone https://github.com/crstansbury/PSlabaudition
+`git clone https://github.com/crstansbury/PSlabaudition`
 
 Step 2: Run the install script.
 
-Step 2.1: Enable your user account access to the labInstal.sh script
+Step 2.1: Enable your user account access to the labInstal.sh script:
 sudo chmod +x PSlabaudition/labInstall.sh
 
-Step 2.2: Run the install script
+Step 2.2: Run the install script: 
 PSlabaudition/labInstall.sh
 
 Step 3: By default, there is no firewall running. This leaves your server open to various attacks. You need to enable the firewall, but before you do so, you need to allow SSH connections to your computer. Otherwise, if you enable the firewall without allowing SSH connections, your SSH connection may be dropped. Addtionally, this server is also hosting a web server, so you need to have the firewall also allow Apache, which is the webserver that we are using. 
