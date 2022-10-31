@@ -73,16 +73,17 @@ Step 4.3.1 Enter the below command and be sure to change \<yourServersIP> to the
 `sudo a2ensite <yourServersIP>.conf`
 
 Step 4.3.2 Now we will have the server to recognize your servers IP address as it's name. To do that, run the below command, and then enter `ServerName <yourServersIP>` on a new line in the file. This can be anywhere, I put it about half way down, after `#ServerRoot '/etc/apache2' `  
-sudo nano /etc/apache2/apache2.conf
 
-Step 4.3.2.1 copy "ServerName <yourServersIP> on a new line in the file
-example: ServerName 172.20.1.211
+`sudo nano /etc/apache2/apache2.conf`
 
-Step 4.3.2.2 save the file
-Press "ctrl + x" and type "Y" when prompted, and hit enter to save over the file
+Step 4.3.2.1 copy `ServerName <yourServersIP>` on a new line in the file:  
+example: `ServerName 172.20.1.211`
 
-Step 4.3.3 Now we are going to test that the previous command worked. The output should say "Syntax OK"
-sudo apache2ctl configtest
+Step 4.3.2.2 save the file:  
+Press `ctrl + x` and type `Y` when prompted, and hit `enter` to save over the file  
+
+Step 4.3.3 Now we are going to test that the previous command worked. The output should say "Syntax OK"  
+`sudo apache2ctl configtest`
 
 Step 4.3.4 Now we need to reload the apache2 service for the previous changes to take effect
 sudo systemctl reload apache2
