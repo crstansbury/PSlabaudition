@@ -16,10 +16,10 @@ Step 1: Clone this repo to your Ubuntu server by entering the following command:
 Step 2: Run the install script.
 
 Step 2.1: Enable your user account access to the labInstal.sh script:
-sudo chmod +x PSlabaudition/labInstall.sh
+`sudo chmod +x PSlabaudition/labInstall.sh`
 
 Step 2.2: Run the install script: 
-PSlabaudition/labInstall.sh
+`PSlabaudition/labInstall.sh`
 
 Step 3: By default, there is no firewall running. This leaves your server open to various attacks. You need to enable the firewall, but before you do so, you need to allow SSH connections to your computer. Otherwise, if you enable the firewall without allowing SSH connections, your SSH connection may be dropped. Addtionally, this server is also hosting a web server, so you need to have the firewall also allow Apache, which is the webserver that we are using. 
 
