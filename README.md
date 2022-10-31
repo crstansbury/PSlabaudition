@@ -29,24 +29,24 @@ Step 3.1: Allow ssh connections to your server by entering the following command
 Step 3.2: Allow the Apache webserver to run by entering the following command:  
 `sudo ufw allow 'Apache'`
 
-Step 3.3: Enable the firewall by entering the command (you may be prompted to enter Y). 
+Step 3.3: Enable the firewall by entering the command (you may be prompted to enter Y).  
 `sudo ufw enable`
 
 Step 4: Browser traffic over without SSL/TLS encryption is in plain text! This means that a hacker could sniff the traffic and gain unauthorized information. In this step, we will generate a self signed certificate, create a file to tell the server to use this certificate to encrypt traffic, and then redirect any unencrypted traffic to use this new certificate!
 
 Step 4.1 In this step, we will generate a certificate to be used by our server.
 
-Step 4.1.1 Generate a self signed certificate
+Step 4.1.1 Generate a self signed certificate:  
 `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt`
 
-Step 4.1.2 : Fill out the information. It may look something like this:
-Country Name (2 letter code) [XX]:<InsertACountry:US>
-State or Province Name (full name) []:<InsertAState:Nebraska>
-Locality Name (eg, city) [Default City]:<InsertACity:Omaha> 
-Organization Name (eg, company) [Default Company Ltd]:<InsertFictiousCompany:Globomantics>
-Organizational Unit Name (eg, section) []:<InsertDepartment:IT>
-Common Name (eg, your name or your server's hostname) []:<insertComputersIP:172.20.1.211>
-Email Address []:<insertAnEmail:craig@globomantics.com>
+Step 4.1.2 : Fill out the information. It may look something like this:  
+`Country Name (2 letter code) [XX]:\<InsertACountry:US>  
+State or Province Name (full name) []:<InsertAState:Nebraska>  
+Locality Name (eg, city) [Default City]:<InsertACity:Omaha>  
+Organization Name (eg, company) [Default Company Ltd]:<InsertFictiousCompany:Globomantics>  
+Organizational Unit Name (eg, section) []:<InsertDepartment:IT>  
+Common Name (eg, your name or your server's hostname) []:<insertComputersIP:172.20.1.211>  
+Email Address []:<insertAnEmail:craig@globomantics.com>`  
 
 step 4.2 Now that our certificate is created, we need to create a .conf file to tell the server to use this certificate
 
