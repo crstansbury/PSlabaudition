@@ -41,7 +41,7 @@ Step 4.1.1 Generate a self signed certificate:
 
 Step 4.1.2 : Fill out the information. It may look something like this:  
 
-	Country Name (2 letter code) [XX]:\<InsertACountry:US>  
+	Country Name (2 letter code) [XX]:<InsertACountry:US>  
 	State or Province Name (full name) []:<InsertAState:Nebraska>  
 	Locality Name (eg, city) [Default City]:<InsertACity:Omaha>  
 	Organization Name (eg, company) [Default Company Ltd]:<InsertFictiousCompany:Globomantics>  
@@ -51,8 +51,8 @@ Step 4.1.2 : Fill out the information. It may look something like this:
 
 step 4.2 Now that our certificate is created, we need to create a .conf file to tell the server to use this certificate
 
-step 4.2.1 Create a conf file to reference the new self signed cert you just created. Replace <yourServersIP> with the IP address of your server.
-sudo nano /etc/apache2/sites-available/<yourServersIP>.conf
+step 4.2.1 Create a conf file to reference the new self signed cert you just created. Replace \<yourServersIP> with the IP address of your server.  
+`sudo nano /etc/apache2/sites-available/<yourServersIP>.conf`
 
 step 4.2.2 Copy the below contents into your new .conf file. Be sure to change the server name <yourServersIP> to the IP address of your server.
 <VirtualHost *:443>
