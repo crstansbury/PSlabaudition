@@ -101,11 +101,18 @@ Step 5 The last step that we need to do is to have the server redirect all unsec
 Step 5.1 Open the .conf file  
 `sudo nano /etc/apache2/apache2.conf`
 
-Step 5.2 We will create a virtual host over port 80, and tell it to redirect to https. Copy the following into your .conf file, after "ServerName <yourServersIP>" that you configured in step 4.3.2.1
+Step 5.2 We will create a virtual host over port 80, and tell it to redirect to https. Copy the following into your .conf file, after "ServerName <yourServersIP>" that you configured in step 4.3.2. Please note that there are two instances that you will need to replace \<yourServersIP> with the IP address of your server. One is on the line `ServerName <yourServersIP>` and the other is on the following line, after `https://` and before `$1`
 
 	<Virtualhost *:80>
 	  ServerName <yourServersIP>
 	  RedirectMatch permanent ^(.*)$ https://<yourServersIP>$1
+	</Virtualhost>
+		
+example:
+
+	<Virtualhost *:80>
+	  ServerName 172.20.1.211
+	  RedirectMatch permanent ^(.*)$ https://172.20.1.211$1
 	</Virtualhost>
 
 Step 5.2.1 Save your work  
