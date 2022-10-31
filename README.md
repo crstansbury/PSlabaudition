@@ -69,10 +69,10 @@ Press `ctrl + x` and type `Y` when prompted, and hit `enter` to save over the fi
 
 Step 4.3 Now we need to enable the .conf file that we just created. 
 
-Step 4.3.1 Enter the below command and be sure to change <yourServersIP> to the IP address of your server
-sudo a2ensite <yourServersIP>.conf
+Step 4.3.1 Enter the below command and be sure to change \<yourServersIP> to the IP address of your server:  
+`sudo a2ensite <yourServersIP>.conf`
 
-Step 4.3.2 Now we will the server to recognize your servers IP address as it's name. To do that, run the below command, and then enter "ServerName <yourServersIP>" on a new line in the file. This can be anywhere, I put it about half way down, after "#ServerRoot '/etc/apache2' "
+Step 4.3.2 Now we will have the server to recognize your servers IP address as it's name. To do that, run the below command, and then enter `ServerName <yourServersIP>` on a new line in the file. This can be anywhere, I put it about half way down, after `#ServerRoot '/etc/apache2' `  
 sudo nano /etc/apache2/apache2.conf
 
 Step 4.3.2.1 copy "ServerName <yourServersIP> on a new line in the file
