@@ -15,29 +15,29 @@ Step 1: Clone this repo to your Ubuntu server by entering the following command:
 
 Step 2: Run the install script.
 
-Step 2.1: Enable your user account access to the labInstal.sh script:
+Step 2.1: Enable your user account access to the labInstal.sh script:  
 `sudo chmod +x PSlabaudition/labInstall.sh`
 
-Step 2.2: Run the install script: 
+Step 2.2: Run the install script:   
 `PSlabaudition/labInstall.sh`
 
 Step 3: By default, there is no firewall running. This leaves your server open to various attacks. You need to enable the firewall, but before you do so, you need to allow SSH connections to your computer. Otherwise, if you enable the firewall without allowing SSH connections, your SSH connection may be dropped. Addtionally, this server is also hosting a web server, so you need to have the firewall also allow Apache, which is the webserver that we are using. 
 
-Step 3.1: Allow ssh connections to your server by entering the following command:
-sudo ufw allow OpenSSH
+Step 3.1: Allow ssh connections to your server by entering the following command:  
+`sudo ufw allow OpenSSH`
 
-Step 3.2: Allow the Apache webserver to run by entering the following command:
-sudo ufw allow 'Apache'
+Step 3.2: Allow the Apache webserver to run by entering the following command:  
+`sudo ufw allow 'Apache'`
 
-Step 3.3: Enable the firewall by entering the command (you may be prompted to enter Y)
-sudo ufw enable
+Step 3.3: Enable the firewall by entering the command (you may be prompted to enter Y). 
+`sudo ufw enable`
 
 Step 4: Browser traffic over without SSL/TLS encryption is in plain text! This means that a hacker could sniff the traffic and gain unauthorized information. In this step, we will generate a self signed certificate, create a file to tell the server to use this certificate to encrypt traffic, and then redirect any unencrypted traffic to use this new certificate!
 
 Step 4.1 In this step, we will generate a certificate to be used by our server.
 
 Step 4.1.1 Generate a self signed certificate
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+`sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt`
 
 Step 4.1.2 : Fill out the information. It may look something like this:
 Country Name (2 letter code) [XX]:<InsertACountry:US>
