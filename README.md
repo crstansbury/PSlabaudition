@@ -57,11 +57,11 @@ step 4.2.1 Create a conf file to reference the new self signed cert you just cre
 step 4.2.2 Copy the below contents into your new .conf file. Be sure to change the server name <yourServersIP> to the IP address of your server.  
 
 	<VirtualHost *:443>  
-	ServerName <yourServersIP>  
-	DocumentRoot /var/www/html  
-	SSLEngine on  
-	SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt  
-	SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key  
+	   ServerName <yourServersIP>  
+	   DocumentRoot /var/www/html  
+	   SSLEngine on  
+	   SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt  
+	   SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key  
 	</VirtualHost>  
 
 Step 4.2.3 Save the file
